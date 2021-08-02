@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white">
+
+    <RelativeLayout
+        android:id="@+id/rl_more_pic_box"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:paddingVertical="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_more_status_pic"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="0dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false">
+
+            <ImageView
+                android:id="@+id/iv_more_pic"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/ic_pic" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_more_telephone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_more_pic_box"
+        android:layout_marginVertical="10dp"
+        android:gravity="center"
+        android:textSize="32sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_more_about"
+            style="@style/ButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_about"
+            android:text="关于" />
+
+        <Button
+            android:id="@+id/btn_more_logout"
+            style="@style/ButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="2"
+            android:drawableTop="@drawable/ic_logout"
+            android:text="退出登录" />
+
+    </LinearLayout>
+
+</RelativeLayout>

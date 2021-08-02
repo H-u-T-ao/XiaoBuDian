@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="132dp"
+    android:paddingTop="12dp">
+
+    <ImageView
+        android:id="@+id/iv_notification_pic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignBottom="@id/tv_notification_artist"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/ic_pic_corner"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tv_notification_music"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_toEndOf="@id/iv_notification_pic"
+        android:singleLine="true"
+        android:text="未在播放"
+        android:textColor="@color/app_black"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/tv_notification_artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_notification_music"
+        android:layout_marginHorizontal="10dp"
+        android:layout_toEndOf="@id/iv_notification_pic"
+        android:singleLine="true"
+        android:text="你都没播放哪来的歌手"
+        android:textColor="@color/app_black" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_notification_artist"
+        android:layout_marginHorizontal="10dp">
+
+        <Button
+            android:id="@+id/iv_notification_last"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="#00FFFFFF"
+            android:text="上一首"
+            android:textColor="@color/app_black"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/iv_notification_control"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:backgroundTint="#00FFFFFF"
+            android:text="开始"
+            android:textColor="@color/app_black"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/iv_notification_next"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="#00FFFFFF"
+            android:text="下一首"
+            android:textColor="@color/app_black"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

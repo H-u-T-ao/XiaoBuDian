@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white">
+
+    <ImageView
+        android:id="@+id/iv_music_player_bg"
+        android:layout_width="1000dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="#66505050" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_music_player_pic"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="0dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="false">
+
+        <ImageView
+            android:id="@+id/iv_music_player_pic"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_pic"
+            android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_music_player_music"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cv_music_player_pic"
+        android:layout_alignStart="@id/cv_music_player_pic"
+        android:layout_alignEnd="@id/cv_music_player_pic"
+        android:ellipsize="marquee"
+        android:paddingTop="20dp"
+        android:singleLine="true"
+        android:text="歌曲"
+        android:textColor="@color/app_white"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/tv_music_player_artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_music_player_music"
+        android:layout_alignStart="@id/tv_music_player_music"
+        android:layout_alignEnd="@id/cv_music_player_pic"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="艺术家"
+        android:textColor="@color/app_white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_music_player_album"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_music_player_artist"
+        android:layout_alignStart="@id/cv_music_player_pic"
+        android:layout_alignEnd="@id/cv_music_player_pic"
+        android:layout_marginVertical="10dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="-1dp"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="专辑"
+        android:textColor="@color/app_white"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/iv_music_player_mode"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_above="@id/sb_music_player_progress"
+        android:layout_alignStart="@id/cv_music_player_pic"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_list_loop" />
+
+    <!--    <Switch-->
+    <!--        android:id="@+id/sw_music_player_mode"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_above="@id/sb_music_player_progress"-->
+    <!--        android:layout_toEndOf="@id/iv_music_player_mode"-->
+    <!--        android:checked="true"-->
+    <!--        android:textOff="单曲循环"-->
+    <!--        android:textOn="列表循环"-->
+    <!--        android:thumb="@drawable/bg_switch_thumb"-->
+    <!--        android:track="@drawable/bg_switch"-->
+    <!--        tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+
+    <ImageView
+        android:id="@+id/iv_music_player_list"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_above="@id/sb_music_player_progress"
+        android:layout_alignEnd="@id/cv_music_player_pic"
+        android:checked="true"
+        android:src="@drawable/ic_player_list" />
+
+    <SeekBar
+        android:id="@+id/sb_music_player_progress"
+        android:layout_width="325dp"
+        android:layout_height="12dp"
+        android:layout_above="@id/tv_music_player_now_time"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:maxHeight="8dp"
+        android:minHeight="8dp"
+        android:progressDrawable="@drawable/bg_seek_bar"
+        android:thumb="@drawable/ic_thumb" />
+
+    <TextView
+        android:id="@+id/tv_music_player_now_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/iv_music_player_control"
+        android:layout_alignStart="@id/cv_music_player_pic"
+        android:layout_marginBottom="20dp"
+        android:text="正在缓冲"
+        android:textColor="@color/app_white" />
+
+    <TextView
+        android:id="@+id/tv_music_player_total_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/iv_music_player_control"
+        android:layout_alignEnd="@id/cv_music_player_pic"
+        android:layout_marginBottom="20dp"
+        android:text="请稍后"
+        android:textColor="@color/app_white" />
+
+    <ImageView
+        android:id="@+id/iv_music_player_control"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/ic_music_player_start" />
+
+    <ImageView
+        android:id="@+id/iv_music_player_last"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="60dp"
+        android:layout_toStartOf="@id/iv_music_player_control"
+        android:background="@drawable/ic_music_player_last" />
+
+    <ImageView
+        android:id="@+id/iv_music_player_next"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="60dp"
+        android:layout_toEndOf="@id/iv_music_player_control"
+        android:background="@drawable/ic_music_player_next" />
+
+</RelativeLayout>

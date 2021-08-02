@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white"
+    android:paddingHorizontal="10dp">
+
+    <Button
+        android:id="@+id/btn_home_daily_songs"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableTop="@drawable/ic_recommend"
+        android:text="每日推荐" />
+
+    <LinearLayout
+        android:id="@+id/ll_home_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_home_daily_songs"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_home_notification"
+            style="@style/ButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_notification"
+            android:text="测试用" />
+
+        <Button
+            android:id="@+id/btn_home_search"
+            style="@style/ButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_search"
+            android:text="搜索" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_home_player_box"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginBottom="16dp"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_home_player_box_color"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/shape_app_gray_corner">
+
+            <TextView
+                android:id="@+id/tv_home_player_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="20dp"
+                android:singleLine="true"
+                android:text="未在播放"
+                android:textColor="@color/app_black"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_home_player_pic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false">
+
+            <ImageView
+                android:id="@+id/iv_home_player_pic"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/ic_pic" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

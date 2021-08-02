@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_search_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_gray_light"
+        android:paddingVertical="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="搜索"
+            android:textColor="@color/app_black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_search_scanner_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_search_action_bar"
+        android:background="#FAFAFA"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp">
+
+        <EditText
+            android:id="@+id/edt_search_scanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="可用空格隔开多个关键词"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1" />
+
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srl_search_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_search_scanner_box"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_white"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:overScrollMode="never" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/tv_search_history_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/chip_search_delete_history"
+        android:layout_marginStart="20dp"
+        android:text="搜索历史"
+        android:textColor="@color/app_black"
+        android:textSize="30sp" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_search_delete_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_search_scanner_box"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:text="清除历史记录" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cg_search_history"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_search_player_box"
+        android:layout_below="@id/chip_search_delete_history"
+        android:layout_marginHorizontal="20dp">
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <RelativeLayout
+        android:id="@+id/rl_search_loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_search_player_box"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_search_loading_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="正在加载中"
+            android:textColor="@color/app_black"
+            android:textSize="16sp" />
+
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toStartOf="@id/tv_search_loading_text"
+            android:indeterminateTint="@color/app_theme_dark"
+            android:indeterminateTintMode="src_atop" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_search_player_box"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginBottom="16dp"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_search_player_box_color"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/shape_app_gray_corner">
+
+            <TextView
+                android:id="@+id/tv_search_player_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="20dp"
+                android:singleLine="true"
+                android:text="未在播放"
+                android:textColor="@color/app_black"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_search_player_pic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false">
+
+            <ImageView
+                android:id="@+id/iv_search_player_pic"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/ic_pic" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

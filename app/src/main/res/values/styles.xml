@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:backgroundTint">@color/app_theme_dark</item>
+    </style>
+
+    <style name="MyTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/app_white</item>
+        <item name="android:colorPrimaryDark">@color/app_white</item>
+    </style>
+
+</resources>
